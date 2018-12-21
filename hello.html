@@ -3,6 +3,8 @@
 
 <head>
   <title>My webpage</title>
+  <link rel="stylesheet" href="hello.css">
+
   <!-- scale view port to width of device --> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -22,7 +24,9 @@
      }
     .mycls {color: green;}
 
-    div jump {color:aqua;}
+     #jump {
+       background-color:aqua;
+      }
 
     button:hover { background-color: orange;}  /* pseudo classes */
 
@@ -81,7 +85,7 @@ P::selection {
   <h2>this is a new feature</h2>
   <a href="https://google.com">goto google</a>
 
-  <div id="jump">
+  <div>
     <a href="#section1">go to entry form</a>
     <span>This is some more text about nothing</span>
     <span class="mycls">This is some text</span>
@@ -92,7 +96,7 @@ P::selection {
     <li>list item two</li>
     <ul>
       <li>list two - one</li>
-      <li>list two - tow</li>
+      <li>list two - two</li>
     </ul>
     <li>list item three</li>
   </ol>
@@ -120,7 +124,7 @@ P::selection {
     </datalist>
   </div>
 
-  <p>
+  <p id="jump">
     This is one long paragraph with lots of words. 
   </p>
 
@@ -134,4 +138,9 @@ P::selection {
   </div>
 </body>
 <!-- another change-->
+
+<p class="success">This is a success message</p>
+<p class="warning">This is a warning message</p>
+<p class="error">This is a error message</p>
+
 </html>
