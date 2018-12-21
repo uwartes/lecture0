@@ -3,11 +3,135 @@
 
 <head>
   <title>My webpage</title>
+  <!-- scale view port to width of device --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+/* affects only elements that belong to ol */
+    ol > li { 
+       color: red;
+     }
+     h1 { 
+       color: blue;
+     }
+
+     input[type=text] {
+       background-color: red;
+     }
+     input[type=number] {
+       background-color: yellow;
+     }
+    .mycls {color: green;}
+
+    div jump {color:aqua;}
+
+    button:hover { background-color: orange;}  /* pseudo classes */
+
+    button {
+      width:200px;
+      height: 50px;
+      font-size: 24px;
+      background-color: green;
+    }
+
+    /* pseudo elements uses unicode symbol 21d2 => */
+    a::before {
+      content: "\21d2 click here: ";
+      font-weight: bold;
+    }
+/* css selectors */
+P::selection {
+  color: red;
+  background-color: yellow;
+}
+/* media query  */
+@media (min-width: 500px) {
+  body {
+     background-color: lightgray; 
+    
+    }
+    h1::before {
+      content: "welcome to full page";
+  }
+}
+
+@media (max-width: 499px) {
+  body {
+    background-color:green;
+  }
+  h1::before {
+      content: "welcome ipad";
+  } 
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container > div {
+  background-color: springgreen;
+  font-size: 20px;
+  margin: 20px;
+  padding: 20px;
+  width: 200px;
+}
+    </style>
 </head>
-  
+
 <body>
-    <h1>hello world</h1>
-    <h2> this is a new feature</h2>
-  </body>
+  <h1></h1>
+  <h2>this is a new feature</h2>
+  <a href="https://google.com">goto google</a>
+
+  <div id="jump">
+    <a href="#section1">go to entry form</a>
+    <span>This is some more text about nothing</span>
+    <span class="mycls">This is some text</span>
+  </div>
+
+  <ol>
+    <li>list item one</li>
+    <li>list item two</li>
+    <ul>
+      <li>list two - one</li>
+      <li>list two - tow</li>
+    </ul>
+    <li>list item three</li>
+  </ol>
+
+  <ul>
+      <li>list two - one</li>
+      <li>list two - tow</li>
+    </ul>
+
+  <h2 id="section1">Entry Form</h2>
+  <form>
+    <input name="name" type="text" placeholder="First Name">
+    <input name="name" type="text" placeholder="Last Name">
+    <input name="name" type="number" placeholder="Age">
+    <input name="color" type="radio" value="Married">Single
+    <input name="color" type="radio" value="Married">Married
+    <button>Submit</button>
+  </form>
+  <div>
+    <input name="country" list="countries" placeholder="Country">
+    <datalist id="countries">
+      <option value="Suriname">
+      <option value="USA">
+      <option value="Mexico">
+    </datalist>
+  </div>
+
+  <p>
+    This is one long paragraph with lots of words. 
+  </p>
+
+  <div class="container">
+    <div>A. abcdefghijklmnopqrstuvwxyz</div>
+    <div>B. abcdefghijklmnopqrstuvwxyz</div>
+    <div>C. abcdefghijklmnopqrstuvwxyz</div>
+    <div>D. abcdefghijklmnopqrstuvwxyz</div>
+    <div>E. abcdefghijklmnopqrstuvwxyz</div>
+    <div>F. abcdefghijklmnopqrstuvwxyz</div>
+  </div>
+</body>
 
 </html>
