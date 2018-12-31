@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About Page</title>
+    <style>
+      #happy {
+        background-color: pink;
+      }
+      #sad {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>This website was created by taking CS50W on EDX</h1>
+    <h3>It contains examples of all material covered up to SQL</h3>
+
+    <h3>this is the variable passed from flask app, {{ headline }}</h3>
+
+    <!--  What is url for index function and go there  -->
+    <ul>
+    <li><a href="{{ url_for('index') }}">first flask page route index</a></li>
+    <li><a href="{{ url_for('tanzania') }}">Tanzania first render_template</a></li>
+    <li><div>pass a value through url  /name/john doe  where John doe is the value passed</div></li>
+    <li><a href="{{ url_for('helloForm') }}">first from with post and extend html</a></li>
+    <li><a href="{{ url_for('notesApp') }}">Take notes app. saved in browser memory</a></li>
+    <li><a href="{{ url_for('flights') }}">flight app with DB connection</a></li>
+    </ul> 
+
+
+    <!--  Jinja2 syntax    -->
+    {% if newYear %}
+    <h2 id="happy">Yes! Happy New Year</h2>
+    {% else %}
+    <h2 id="sad">NO</h2>
+    {% endif %}
+
+    <!--  Loop  -->
+    <h3>Names</h3>
+    <ul>
+      {% for name in nameList %}
+      <li>{{ name }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

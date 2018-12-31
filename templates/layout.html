@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>my layout</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+    <h1>{% block heading %}{% endblock %}</h1>
+
+    {% block body %} {% endblock %}
+    </div>
+  </body>
+</html>

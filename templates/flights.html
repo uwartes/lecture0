@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block heading %} Flights {% endblock %} 
+
+{% block body %}
+<h1>Book a Flight</h1>
+<form action="{{ url_for('book') }}" method="post">
+  <select name="flight_id">
+    {% for flight in flights %}
+    <option value="{{ flight.id }}"
+      >{{ flight.origin }} to {{ flight.destination }}</option
+    >
+    {% endfor %}
+  </select>
+
+  <div class="form-group">
+    <input class="form-control" name="name" placeholder="Passenger Name">
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary">Book Flight</button>
+  </div>
+</form>
+
+<h1>All Flights</h1>
+<ul>
+    {% for flight in flights %}
+    <li>
+        <a href="{{ url_for('flightDetail', flight_id=flight.id) }}">
+                 {{ flight.origin }} to {{ flight.destination}}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
